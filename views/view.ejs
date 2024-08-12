@@ -1,0 +1,13 @@
+<%- include("partials/header.ejs") %>
+
+<!--we want to show all the blogs created using a loop-->
+<h2>All Blog Posts</h2>
+
+<% if (blogs.length === 0) { %>
+<p>No blog posts available.</p>
+<% } else { %> <% blogs.forEach(blog => { %>
+<div class="blog-post">
+  <h3><%= blog.title %></h3>
+  <p><%= blog.content %></p>
+</div>
+<% }); %> <% } %>
